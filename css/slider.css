@@ -1,0 +1,28 @@
+.carousel .carousel-indicators button {
+    width: 10px;
+   height: 10px;
+   border-radius: 100%;
+ }
+ .carousel img{
+    max-height: 400px;
+ }
+
+ /***************************************************/
+ .price-eCommerce{
+   display:flex;
+   font-size:  2rem;
+   font-weight: bold;
+ justify-content: center;      background-image: linear-gradient(white, #ededed );
+    
+   color: black;
+}
+.line-height-coin{
+   line-height: 2;
+    align-self: center;   
+}
+.line-height-integer{
+   line-height: 1;
+   font-size: 7rem;
+   align-self: center; 
+}
+ 

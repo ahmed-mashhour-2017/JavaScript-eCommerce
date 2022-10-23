@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+    <style>
+        * {box-sizing: border-box;}
+        
+        .img-zoom-container {
+          position: relative;
+        }
+        
+        .img-zoom-lens {
+          position: absolute;
+          border: 1px solid #d4d4d4;
+          /*set the size of the lens:*/
+          width: 40px;
+          height: 40px;
+        }
+        
+        .img-zoom-result {
+          border: 1px solid #d4d4d4;
+          /*set the size of the result div:*/
+          width: 300px;
+          height: 300px;
+        }
+        </style>
+ </head>
+<body>
+
+    <div class="container">
+    
+        <div class="content">
+            <div class="text">
+                <h2>
+                    iphone 13 pro max
+                </h2>
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing 
+                    elit. Magni, porro veritatis necessitatibus
+                     voluptatum dolorum doloribus debitis ab non delectus quasi.
+                </p>
+                <a href="#">All Products</a>
+            </div>
+            <div class="image">
+                <img class="img" src="../images/2.png" >
+            </div>
+        </div>    
+    <div class="icons">
+        <img onclick="phones(src);colors('#000')" src="../images/0.png">
+        <img onclick="phones(src);colors('#247ec8')" src="../images/1.png">
+        <img onclick="phones(src);colors('#1e1e1e')" src="../images/2.png">
+        <img onclick="phones(src);colors('#c79b53')" src="../images/3.png">
+        <img onclick="phones(src);colors('#c82525')" src="../images/4.png">
+
+
+
+    </div>   
+    
+    </div>
+
+    <section id="one_product">
+
+    </section>
+    <script>
+           var locStorage=localStorage.getItem("pro_id")
+            console.log("Welcome  " + locStorage );
+            let datajson=JSON.parse(localStorage.getItem("myjson"));
+            console.log(datajson);
+            var i=5;
+             var pro=`
+           <div class="container">
+       
+        <div class="content">
+            <div class="text">
+                <h2>
+                  ${datajson.products[i].title} 
+                </h2>
+                 
+                <div class="img-zoom-container image">
+                <img id="myimage" src="${datajson.products[i].thumbnail}" width="300" height="240"class"img">
+                <div id="myresult" class="img-zoom-result">
+                </div>
+                </div>
+ 
+            <div class="icons">
+            <img onclick="phones(${datajson.products[i].images[0]}); src="${datajson.products[i].images[0]}">
+            <img onclick="phones(${datajson.products[i].images[1]}); src="${datajson.products[i].images[1]}">
+            <img onclick="phones(${datajson.products[i].images[2]}); src="${datajson.products[i].images[2]}">
+            <img onclick="phones(${datajson.products[i].images[3]}); src="${datajson.products[i].images[3]}">
+            </div>   
+            
+                <p>
+                  ${datajson.products[i].description}
+                </p>
+                <h1 class="card-title m-0 p-0"style="font-size:  1rem;"> 
+                          <div class="price-eCommerce" > 
+                            <div class="line-height-coin">${datajson.products[i].price}</div> 
+                            <div class="fa-1x">$</div> 
+                              </div>
+                        </h1>
+                        <p  class=" m-3"style="color:#3e4551; ">
+                            <i class="fa-solid fa-cubes-stacked 1x"></i><span class"fs-3 " ><b> ${datajson.products[i].stock}  </b></span> left in stock
+                            <br><br>
+                         
+                            <i class="fa-solid fa-star 1x"></i><span class"fs-3 " > <b> ${datajson.products[i].rating}% </b> </span> Rating
+                            <br><br>
+                            <div class="card-header card-btn"style="background-color: #ff9900;" onclick="add_to_cart(${i})">
+                            <i class="fa-solid fa-cart-shopping fa-2x"></i> Add To Cart  
+                           </div> 
+                            <br><br>
+                           <a href="#" onclick="setproducts();hidepro()">All Products</a>
+                           <br><br>
+            </div>
+           
+        </div>    
+  
+    </div>
+
+           `;
+           document.getElementById("one_product").innerHTML=pro; 
+  
+    </script>
+   <script   src="../js/zoom.js"></script>
+    <script>    
+        imageZoom("myimage", "myresult");
+      </script>
+      <script src="../js/script.js"></script>
+ </body>
+</html>

@@ -1,0 +1,23 @@
+#register,h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+   
+
+}
+button{
+     margin-top: 10px;
+}
+body{
+    background:linear-gradient(#ff00ff,#332333);
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+
+    
+}

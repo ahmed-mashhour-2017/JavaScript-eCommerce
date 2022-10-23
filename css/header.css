@@ -1,0 +1,33 @@
+header{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;}
+#header{
+    height: 40px;
+    background-color:#131921;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.header_r  
+{
+    flex: 0 0 auto;
+    width: 30%;
+height:40px;
+background-color:#131921;
+ color:#00bfff;
+ padding-top: 7px;
+}
+.header_r a{
+    text-decoration: none;
+    margin-left: 5px;
+ 
+} 
+.header_l
+{
+    flex: 0 0 auto;
+    width: 40%;
+    margin-left: 20%;
+height:40px;
+background-color:#131921;
+}
